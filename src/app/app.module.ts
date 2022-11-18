@@ -12,6 +12,11 @@ import { ProductAlertsComponent } from './product-alerts/product-alerts.componen
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CartComponent } from './cart/cart.component';
 import { ShippingComponent } from './shipping/shipping.component';
+import { StoreModule } from '@ngrx/store';
+import { uiStateReducer } from './store/ui-state/ui-state.reducer';
+import { TextboxComponent } from './sample/textbox/textbox.component';
+import { NgrxComponent } from './sample/ngrx/ngrx.component';
+import { LoopComponent } from './sample/loop/loop.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +26,10 @@ import { ShippingComponent } from './shipping/shipping.component';
     ProductAlertsComponent,
     ProductDetailsComponent,
     CartComponent,
-    ShippingComponent
+    ShippingComponent,
+    TextboxComponent,
+    NgrxComponent,
+    LoopComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +41,14 @@ import { ShippingComponent } from './shipping/shipping.component';
       { path: 'products/:productId', component: ProductDetailsComponent },
       { path: 'cart', component: CartComponent },
       { path: 'shipping', component: ShippingComponent },
-    ])
+      { path: 'sample/text', component: TextboxComponent },
+      { path: 'sample/ngrx', component: NgrxComponent },
+      { path: 'sample/loop', component: LoopComponent }
+    ]),
+    //ngrx 스토어 설정
+    StoreModule.forRoot({
+      uiState : uiStateReducer
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

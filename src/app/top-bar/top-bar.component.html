@@ -1,28 +1,29 @@
 <a [routerLink]="['/']">
-  <h1>My Store</h1>
+  <h1>{{ title }}</h1>
 </a>
 
 
-<div>
-  <a routerLink="/sample" class="button fancy-button">
-    go to sample
-  </a><span>|</span>
-  <a routerLink="/sample/text" class="button fancy-button">
+<div *ngIf="(isSample$ | async)">  
+  <a routerLink="/sample/text" class="button fancy-button" >
     textbox
   </a><span>|</span>
-  <a routerLink="/sample/store" class="button fancy-button">
-    store
+  <a routerLink="/sample/ngrx" class="button fancy-button" >
+    ngrx
   </a><span>|</span>
-  <a routerLink="/sample/loop" class="button fancy-button">
+  <a routerLink="/sample/loop" class="button fancy-button" >
     loop
   </a><span>|</span>
-  <a routerLink="/sample/loop" class="button fancy-button">
-    loop
-  </a><span>|</span>
-  <a routerLink="/cart" class="button fancy-button">
-    Checkout
+  <a routerLink="/" class="button fancy-button" (click)="goToMyStore()">
+    My store Sample
   </a>
 </div>
+  <a routerLink="/sample/text" class="button fancy-button" *ngIf="!(isSample$ | async)" (click)="goToSample()">
+    go to sample
+  </a>
+  <a routerLink="/cart" class="button fancy-button" *ngIf="!(isSample$ | async)">
+    Checkout
+  </a>
+
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.

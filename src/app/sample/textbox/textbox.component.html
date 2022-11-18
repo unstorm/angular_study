@@ -1,0 +1,52 @@
+<h1>Textbox</h1>
+
+<h2>login form</h2>
+<form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <div>
+        <label for="id">
+            id
+        </label>
+        <input id="accessId" type="text" formControlName="accessId">
+        <label for="password">
+            password
+        </label>
+        <input id="password" type="password" formControlName="password">
+    </div>
+    <button class="button" type="submit">confirm</button>
+</form>
+
+<h2>Join form</h2>
+<form [formGroup]="joinForm" (ngSubmit)="onJoin()">
+    <div>
+        <label for="joinId">
+            ID
+        </label>
+        <input id="joinId" type="text" formControlName="joinId">
+        <label for="name">
+            Name
+        </label>
+        <input id="name" type="text" formControlName="name">
+        <label for="pwd">
+            Password
+        </label>
+        <input id="pwd" type="password" formControlName="pwd">
+        <label for="confirmPwd">
+            confirm Password
+        </label>
+        <input id="confirmPwd" type="password" formControlName="confirmPwd">
+        <label id="address">
+            address
+        </label>
+        <input id="address" placeholder="02" type="text" formControlName="address">
+        <label for="tel">
+            telephone
+        </label>
+        <input id="tel" placeholder="02" (keypress)="numberOnly($event)" type="text" formControlName="tel">
+        <label>
+            cell phone
+        </label>
+        <input id="cellPhone" placeholder="010" (keypress)="numberOnly($event)" type="text" formControlName="cellPhone">
+    </div>
+    <button class="button" type="submit">Join us</button>
+</form>
+
