@@ -17,10 +17,17 @@ export class LoopComponent implements OnInit {
   ) { }
 
   data!: Observable<{type:string, price:number}[]>;
+  externalData!: Observable<any>;
 
   ngOnInit(): void {
     this.store.dispatch(setSampleTrue())
-
     this.data = this.dataservice.getData();
+
+    this.dataservice.getExternalData().subscribe(
+      response => {
+        console.log(response)
+        this.externalData = response.resultValue
+      }
+    )
   }
 }
