@@ -1,1 +1,8 @@
-<p>loop works!</p>
+<h3>loop works!</h3>
+
+
+<h2>shipping test</h2>
+<div class="shipping-item" *ngFor="let datum of data | async">
+    <span>{{ datum.price }}</span>
+    <span>{{ datum.type }}</span>
+</div>

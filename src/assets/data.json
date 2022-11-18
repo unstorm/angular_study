@@ -1,0 +1,14 @@
+[
+    {
+      "type": "type-1",
+      "price": 25.99
+    },
+    {
+      "type": "type-2",
+      "price": 9.99
+    },
+    {
+      "type": "type-3",
+      "price": 2.99
+    }
+  ]

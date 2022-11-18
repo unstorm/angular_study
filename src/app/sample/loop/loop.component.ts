@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { DataService } from 'src/app/service/data.service';
 import { setSampleTrue } from 'src/app/store/ui-state/ui-state.action';
 
 @Component({
@@ -10,11 +12,15 @@ import { setSampleTrue } from 'src/app/store/ui-state/ui-state.action';
 export class LoopComponent implements OnInit {
 
   constructor(
-    private store: Store
+    private store: Store,
+    private dataservice: DataService
   ) { }
+
+  data!: Observable<{type:string, price:number}[]>;
 
   ngOnInit(): void {
     this.store.dispatch(setSampleTrue())
-  }
 
+    this.data = this.dataservice.getData();
+  }
 }

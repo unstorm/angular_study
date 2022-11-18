@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router'
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
@@ -17,6 +17,7 @@ import { uiStateReducer } from './store/ui-state/ui-state.reducer';
 import { TextboxComponent } from './sample/textbox/textbox.component';
 import { NgrxComponent } from './sample/ngrx/ngrx.component';
 import { LoopComponent } from './sample/loop/loop.component';
+import { HttpInterceptorService } from './service/http.interceptor.service';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,9 @@ import { LoopComponent } from './sample/loop/loop.component';
       uiState : uiStateReducer
     })
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
