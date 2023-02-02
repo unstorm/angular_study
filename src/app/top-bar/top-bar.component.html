@@ -3,7 +3,10 @@
 </a>
 
 
-<div *ngIf="(isSample$ | async)">  
+<div *ngIf="(isSample$ | async)">
+  <a routerLink="/sample/chart" class="button fancy-button" >
+    d3 chart
+  </a><span>|</span>
   <a routerLink="/sample/text" class="button fancy-button" >
     textbox
   </a><span>|</span>

@@ -18,6 +18,7 @@ import { TextboxComponent } from './sample/textbox/textbox.component';
 import { NgrxComponent } from './sample/ngrx/ngrx.component';
 import { LoopComponent } from './sample/loop/loop.component';
 import { HttpInterceptorService } from './service/http.interceptor.service';
+import { ChartComponent } from './sample/chart/chart.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { HttpInterceptorService } from './service/http.interceptor.service';
     ShippingComponent,
     TextboxComponent,
     NgrxComponent,
-    LoopComponent
+    LoopComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,9 @@ import { HttpInterceptorService } from './service/http.interceptor.service';
       { path: 'shipping', component: ShippingComponent },
       { path: 'sample/text', component: TextboxComponent },
       { path: 'sample/ngrx', component: NgrxComponent },
-      { path: 'sample/loop', component: LoopComponent }
+      { path: 'sample/loop', component: LoopComponent },
+      { path: 'sample/chart', component: ChartComponent }
+
     ]),
     //ngrx 스토어 설정
     StoreModule.forRoot({
