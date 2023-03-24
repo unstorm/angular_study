@@ -19,6 +19,10 @@ import { NgrxComponent } from './sample/ngrx/ngrx.component';
 import { LoopComponent } from './sample/loop/loop.component';
 import { HttpInterceptorService } from './service/http.interceptor.service';
 import { ChartComponent } from './sample/chart/chart.component';
+import { booksReducer } from './store/state/books.reducer';
+import { collectionReducer } from './store/state/collection.reducer';
+
+
 
 @NgModule({
   declarations: [
@@ -47,12 +51,13 @@ import { ChartComponent } from './sample/chart/chart.component';
       { path: 'sample/text', component: TextboxComponent },
       { path: 'sample/ngrx', component: NgrxComponent },
       { path: 'sample/loop', component: LoopComponent },
-      { path: 'sample/chart', component: ChartComponent }
-
+      { path: 'sample/chart', component: ChartComponent },      
     ]),
     //ngrx 스토어 설정
     StoreModule.forRoot({
-      uiState : uiStateReducer
+      uiState : uiStateReducer,
+      books: booksReducer, 
+      collection: collectionReducer 
     })
   ],
   providers: [
