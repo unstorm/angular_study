@@ -21,6 +21,7 @@ import { HttpInterceptorService } from './service/http.interceptor.service';
 import { ChartComponent } from './sample/chart/chart.component';
 import { booksReducer } from './store/state/books.reducer';
 import { collectionReducer } from './store/state/collection.reducer';
+import { SplitterComponent } from './sample/splitter/splitter.component';
 
 
 
@@ -36,7 +37,8 @@ import { collectionReducer } from './store/state/collection.reducer';
     TextboxComponent,
     NgrxComponent,
     LoopComponent,
-    ChartComponent
+    ChartComponent,
+    SplitterComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +53,8 @@ import { collectionReducer } from './store/state/collection.reducer';
       { path: 'sample/text', component: TextboxComponent },
       { path: 'sample/ngrx', component: NgrxComponent },
       { path: 'sample/loop', component: LoopComponent },
-      { path: 'sample/chart', component: ChartComponent },      
+      { path: 'sample/chart', component: ChartComponent },
+      { path: 'sample/splitter', component: SplitterComponent },
     ]),
     //ngrx 스토어 설정
     StoreModule.forRoot({

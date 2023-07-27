@@ -1,0 +1,28 @@
+.split-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .top,
+  .bottom {
+    flex: 1;
+    overflow: auto;
+  }
+  
+  .splitter-handle {
+    cursor: row-resize;
+    height: 10px;
+    background-color: #ccc;
+  }
+  
+  .top {
+    background-color: black;
+    color: white;
+  }
+  
+  .bottom {
+    background-color: red;
+    color: white;
+  }
+  
